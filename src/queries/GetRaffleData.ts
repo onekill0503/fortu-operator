@@ -5,6 +5,7 @@ const GET_RAFFLE_DATA = gql`
     joinRaffles(where: { batch_eq: $batch }) {
       wallet
       amount
+      block
       batch
       timestamp
     }
