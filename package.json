@@ -6,7 +6,10 @@
     "dev": "bun run --watch src/index.ts"
   },
   "dependencies": {
-    "elysia": "latest"
+    "@elysiajs/cron": "^1.1.1",
+    "elysia": "latest",
+    "ethers": "^6.13.4",
+    "graphql-request": "^7.1.2"
   },
   "devDependencies": {
     "bun-types": "latest"
