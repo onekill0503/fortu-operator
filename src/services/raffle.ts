@@ -7,16 +7,20 @@ import { getRaffleData } from "../utils/subgraph";
 const raffleData = async () => {
     const FortuSmartContract = await getFortuSmartContract();
     const OperatorWallet: Wallet = await getOwnerWallet();
-    const activeBatch = (await FortuSmartContract.currentBatch())[0];
-    const isOperatorAlreadySubmit: boolean = (await FortuSmartContract.operatorConfirm(activeBatch, OperatorWallet.address))[0]
-    
+    const activeBatch = (await FortuSmartContract.currentBatch());
+
+    const getGeneratedLuckyNumber: string = (await FortuSmartContract.randomNumbers(activeBatch));
+    if(BigInt(getGeneratedLuckyNumber[0]) === BigInt(0)) {
+        console.log(`[${new Date()}] FORTU : Lucky Number Not Generated Yet !`);
+    }
+
+    const isOperatorAlreadySubmit: boolean = (await FortuSmartContract.operatorConfirm(activeBatch, OperatorWallet.address))
     if(isOperatorAlreadySubmit){
         console.log(`[${new Date()}] FORTU : Operator already submit winner`);
         return;
     }
 
     const finalUserRaffleData = await getFinalRaffleData(BigInt(activeBatch));
-    const getGeneratedLuckyNumber: string = (await FortuSmartContract.randomNumbers(activeBatch))[1];
     const luckyNumber: BigInt = (BigInt(getGeneratedLuckyNumber) / finalUserRaffleData.totalTickets) + BigInt(1);
     const luckyUser: UserTicket | undefined = finalUserRaffleData.data.find((ticket) => {
         return luckyNumber >= ticket.startTicketNumber && luckyNumber <= ticket.endTicketNumber;
@@ -59,7 +63,7 @@ const removeDuplicateAddresses = (raffleData: Raffle[]) => {
 const generateUserTickets = async (raffleData: Raffle[]): Promise<{ data: UserTicket[], totalTickets: bigint}> => {
     let ticketNumber = BigInt(1);
     const FortuSmartContract = await getFortuSmartContract();
-    const blockToTicketRatio: bigint = (await FortuSmartContract.BLOCK_TO_TICKET_RATIO())[0]
+    const blockToTicketRatio: bigint = (await FortuSmartContract.BLOCK_TO_TICKET_RATIO())
     const latestBlock: bigint = BigInt(await getLatestBlock());
     const userTickets: UserTicket[] = [];
     raffleData.forEach((r: Raffle) => {

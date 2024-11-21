@@ -1,15 +1,15 @@
-import { gql } from "graphql-request";
+import { gql } from 'graphql-request'
 
 const GET_RAFFLE_DATA = gql`
   query GetRaffleData($batch: BigInt!) {
-    joinRaffles(where: { batch_eq: $batch }) {
+    joinRaffles(where: { batch_gte: $batch }) {
       wallet
       amount
       block
       batch
-      timestamp
+      timestamp_
     }
   }
-`;
+`
 
-export default GET_RAFFLE_DATA;
+export default GET_RAFFLE_DATA

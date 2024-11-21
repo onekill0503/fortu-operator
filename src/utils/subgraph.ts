@@ -10,7 +10,7 @@ export const getSubGraphClient = () => {
 export const getRaffleData = async (batch: BigInt) => {
   const client = getSubGraphClient();
   try {
-    const response = (await client.request<{ raffles: Raffle[] }>(GET_RAFFLE_DATA, { batch: batch.toString() })).raffles;
+    const response = (await client.request<{ joinRaffles: Raffle[] }>(GET_RAFFLE_DATA, { batch: batch.toString() })).joinRaffles;
     return response;
   } catch (error) {
     console.error("Error fetching donations:", error);
