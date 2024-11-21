@@ -11,7 +11,7 @@ const raffleData = async () => {
 
     console.log(`[${new Date()}] FORTU : Get Random Number for Batch ${activeBatch} !`)
     const getGeneratedLuckyNumber: string = (await FortuSmartContract.randomNumbers(activeBatch));
-    if(BigInt(getGeneratedLuckyNumber[0]) !== BigInt(0) && BigInt(getGeneratedLuckyNumber[1]) !== BigInt(0)) {
+    if(BigInt(getGeneratedLuckyNumber[0]) === BigInt(0) && BigInt(getGeneratedLuckyNumber[1]) === BigInt(0)) {
         console.log(`[${new Date()}] FORTU : Lucky Number Not Generated Yet !`);
         return;
     }
@@ -30,7 +30,7 @@ const raffleData = async () => {
     }
 
     console.log(`[${new Date()}] FORTU : Get Lucky User for Batch ${activeBatch} !`);
-    const luckyNumber: BigInt = (BigInt(getGeneratedLuckyNumber) / finalUserRaffleData.totalTickets) + BigInt(1);
+    const luckyNumber: BigInt = (BigInt(getGeneratedLuckyNumber[1]) % finalUserRaffleData.totalTickets) + BigInt(1);
     const luckyUser: UserTicket | undefined = finalUserRaffleData.data.find((ticket) => {
         return luckyNumber >= ticket.startTicketNumber && luckyNumber <= ticket.endTicketNumber;
     });
@@ -45,6 +45,7 @@ const raffleData = async () => {
     console.log(`[${new Date()}] FORTU : Submit Winner for Batch ${activeBatch} !`);
     const submitWinnerTx = await FortuSmartContract.submitWinner(luckyNumber , luckyUser?.wallet);
     await submitWinnerTx.wait();
+    console.log(submitWinnerTx);
 }
 
 const getFinalRaffleData = async (batch: BigInt): Promise<{ data: UserTicket[], totalTickets: bigint}> => {
@@ -80,7 +81,7 @@ const generateUserTickets = async (raffleData: Raffle[]): Promise<{ data: UserTi
     const userTickets: UserTicket[] = [];
     raffleData.forEach((r: Raffle) => {
         const holdingBlock = (latestBlock - BigInt(r.block));
-        const userTotalTicket = (holdingBlock / blockToTicketRatio) + BigInt(r.amount);
+        const userTotalTicket = (holdingBlock / blockToTicketRatio) + (BigInt(r.amount) / BigInt(1e18));
         const endTicketNumber = (ticketNumber + userTotalTicket);
         const userTicket: UserTicket = {
             wallet: r.wallet,

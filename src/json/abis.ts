@@ -312,6 +312,25 @@ export const FORTU_CONTRACT_ABI = [
   },
   {
     type: 'function',
+    name: 'isValidOperator',
+    inputs: [
+      {
+        name: '_operator',
+        type: 'address',
+        internalType: 'address'
+      }
+    ],
+    outputs: [
+      {
+        name: '',
+        type: 'bool',
+        internalType: 'bool'
+      }
+    ],
+    stateMutability: 'view'
+  },
+  {
+    type: 'function',
     name: 'linkAddress',
     inputs: [],
     outputs: [
