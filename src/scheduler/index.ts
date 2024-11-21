@@ -6,7 +6,7 @@ import raffleData from "../services/raffle";
  */
 export default cron({
   name: `Fortu Operator Winner Pick Execution`,
-  pattern: Patterns.everyMinutes(20),
+  pattern: Patterns.everyMinutes(10),
   run: async () => {
     try {
       await raffleData();

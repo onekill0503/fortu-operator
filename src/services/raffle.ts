@@ -16,11 +16,11 @@ const raffleData = async () => {
         return;
     }
     console.log(`[${new Date()}] FORTU : Lucky Number Generated : ${BigInt(getGeneratedLuckyNumber[1]).toString()} !`);
-    const isOperatorAlreadySubmit: boolean = (await FortuSmartContract.operatorConfirm(activeBatch, OperatorWallet.address))
-    if(isOperatorAlreadySubmit){
-        console.log(`[${new Date()}] FORTU : Operator already submit winner`);
-        return;
-    }
+    // const isOperatorAlreadySubmit: boolean = (await FortuSmartContract.operatorConfirm(activeBatch, OperatorWallet.address))
+    // if(isOperatorAlreadySubmit){
+    //     console.log(`[${new Date()}] FORTU : Operator already submit winner`);
+    //     return;
+    // }
     
     console.log(`[${new Date()}] FORTU : Get Final Raffle Data for Batch ${activeBatch} !`);
     const finalUserRaffleData = await getFinalRaffleData(BigInt(activeBatch));
