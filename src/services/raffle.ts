@@ -45,7 +45,9 @@ const raffleData = async () => {
     console.log(`[${new Date()}] FORTU : Submit Winner for Batch ${activeBatch} !`);
     const submitWinnerTx = await FortuSmartContract.submitWinner(luckyNumber , luckyUser?.wallet);
     await submitWinnerTx.wait();
-    console.log(submitWinnerTx);
+    console.log(`[${new Date()}] FORTU : Winner Submitted for Batch ${activeBatch} !`);
+    console.log(`[${new Date()}] FORTU : Hash ${submitWinnerTx?.hash ?? '0x'} !`);
+    console.log(`============================== NEW LINE ==============================`);
 }
 
 const getFinalRaffleData = async (batch: BigInt): Promise<{ data: UserTicket[], totalTickets: bigint}> => {

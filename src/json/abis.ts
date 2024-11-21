@@ -1,858 +1,859 @@
 export const FORTU_CONTRACT_ABI = [
   {
-    type: 'constructor',
-    inputs: [
+    "type": "constructor",
+    "inputs": [
       {
-        name: '_susde',
-        type: 'address',
-        internalType: 'address'
+        "name": "_susde",
+        "type": "address",
+        "internalType": "address"
       },
       {
-        name: '_usde',
-        type: 'address',
-        internalType: 'address'
+        "name": "_usde",
+        "type": "address",
+        "internalType": "address"
       },
       {
-        name: '_price',
-        type: 'uint256',
-        internalType: 'uint256'
+        "name": "_price",
+        "type": "uint256",
+        "internalType": "uint256"
       }
     ],
-    stateMutability: 'nonpayable'
+    "stateMutability": "nonpayable"
   },
   {
-    type: 'receive',
-    stateMutability: 'payable'
+    "type": "receive",
+    "stateMutability": "payable"
   },
   {
-    type: 'function',
-    name: 'BLOCK_TO_TICKET_RATIO',
-    inputs: [],
-    outputs: [
+    "type": "function",
+    "name": "BLOCK_TO_TICKET_RATIO",
+    "inputs": [],
+    "outputs": [
       {
-        name: '',
-        type: 'uint256',
-        internalType: 'uint256'
+        "name": "",
+        "type": "uint256",
+        "internalType": "uint256"
       }
     ],
-    stateMutability: 'view'
+    "stateMutability": "view"
   },
   {
-    type: 'function',
-    name: 'CURRENT_BATCH',
-    inputs: [],
-    outputs: [
+    "type": "function",
+    "name": "CURRENT_BATCH",
+    "inputs": [],
+    "outputs": [
       {
-        name: '',
-        type: 'uint256',
-        internalType: 'uint256'
+        "name": "",
+        "type": "uint256",
+        "internalType": "uint256"
       }
     ],
-    stateMutability: 'view'
+    "stateMutability": "view"
   },
   {
-    type: 'function',
-    name: 'MIN_OPERATOR_CONFIRM',
-    inputs: [],
-    outputs: [
+    "type": "function",
+    "name": "MIN_OPERATOR_CONFIRM",
+    "inputs": [],
+    "outputs": [
       {
-        name: '',
-        type: 'uint256',
-        internalType: 'uint256'
+        "name": "",
+        "type": "uint256",
+        "internalType": "uint256"
       }
     ],
-    stateMutability: 'view'
+    "stateMutability": "view"
   },
   {
-    type: 'function',
-    name: 'PLATFORM_PERCENTAGE',
-    inputs: [],
-    outputs: [
+    "type": "function",
+    "name": "PLATFORM_PERCENTAGE",
+    "inputs": [],
+    "outputs": [
       {
-        name: '',
-        type: 'uint256',
-        internalType: 'uint256'
+        "name": "",
+        "type": "uint256",
+        "internalType": "uint256"
       }
     ],
-    stateMutability: 'view'
+    "stateMutability": "view"
   },
   {
-    type: 'function',
-    name: 'TICKET_PRICE',
-    inputs: [],
-    outputs: [
+    "type": "function",
+    "name": "TICKET_PRICE",
+    "inputs": [],
+    "outputs": [
       {
-        name: '',
-        type: 'uint256',
-        internalType: 'uint256'
+        "name": "",
+        "type": "uint256",
+        "internalType": "uint256"
       }
     ],
-    stateMutability: 'view'
+    "stateMutability": "view"
   },
   {
-    type: 'function',
-    name: 'TOTAL_FEES_COLLECTED',
-    inputs: [],
-    outputs: [
+    "type": "function",
+    "name": "TOTAL_FEES_COLLECTED",
+    "inputs": [],
+    "outputs": [
       {
-        name: '',
-        type: 'uint256',
-        internalType: 'uint256'
+        "name": "",
+        "type": "uint256",
+        "internalType": "uint256"
       }
     ],
-    stateMutability: 'view'
+    "stateMutability": "view"
   },
   {
-    type: 'function',
-    name: 'TOTAL_STACKED',
-    inputs: [],
-    outputs: [
+    "type": "function",
+    "name": "TOTAL_STACKED",
+    "inputs": [],
+    "outputs": [
       {
-        name: '',
-        type: 'uint256',
-        internalType: 'uint256'
+        "name": "",
+        "type": "uint256",
+        "internalType": "uint256"
       }
     ],
-    stateMutability: 'view'
+    "stateMutability": "view"
   },
   {
-    type: 'function',
-    name: 'TOTAL_STACKED_BATCH',
-    inputs: [],
-    outputs: [
+    "type": "function",
+    "name": "TOTAL_STACKED_BATCH",
+    "inputs": [],
+    "outputs": [
       {
-        name: '',
-        type: 'uint256',
-        internalType: 'uint256'
+        "name": "",
+        "type": "uint256",
+        "internalType": "uint256"
       }
     ],
-    stateMutability: 'view'
+    "stateMutability": "view"
   },
   {
-    type: 'function',
-    name: 'addOpertaor',
-    inputs: [
+    "type": "function",
+    "name": "addOpertaor",
+    "inputs": [
       {
-        name: '_operator',
-        type: 'address',
-        internalType: 'address'
+        "name": "_operator",
+        "type": "address",
+        "internalType": "address"
       }
     ],
-    outputs: [],
-    stateMutability: 'nonpayable'
+    "outputs": [],
+    "stateMutability": "nonpayable"
   },
   {
-    type: 'function',
-    name: 'batchPausePeriod',
-    inputs: [],
-    outputs: [
+    "type": "function",
+    "name": "batchPausePeriod",
+    "inputs": [],
+    "outputs": [
       {
-        name: '',
-        type: 'bool',
-        internalType: 'bool'
+        "name": "",
+        "type": "bool",
+        "internalType": "bool"
       }
     ],
-    stateMutability: 'view'
+    "stateMutability": "view"
   },
   {
-    type: 'function',
-    name: 'batchPools',
-    inputs: [
+    "type": "function",
+    "name": "batchPools",
+    "inputs": [
       {
-        name: '',
-        type: 'uint256',
-        internalType: 'uint256'
+        "name": "",
+        "type": "uint256",
+        "internalType": "uint256"
       },
       {
-        name: '',
-        type: 'address',
-        internalType: 'address'
+        "name": "",
+        "type": "address",
+        "internalType": "address"
       }
     ],
-    outputs: [
+    "outputs": [
       {
-        name: 'blockNumber',
-        type: 'uint256',
-        internalType: 'uint256'
+        "name": "blockNumber",
+        "type": "uint256",
+        "internalType": "uint256"
       },
       {
-        name: 'amount',
-        type: 'uint256',
-        internalType: 'uint256'
+        "name": "amount",
+        "type": "uint256",
+        "internalType": "uint256"
       }
     ],
-    stateMutability: 'view'
+    "stateMutability": "view"
   },
   {
-    type: 'function',
-    name: 'batchTotalStacked',
-    inputs: [
+    "type": "function",
+    "name": "batchTotalStacked",
+    "inputs": [
       {
-        name: '',
-        type: 'uint256',
-        internalType: 'uint256'
+        "name": "",
+        "type": "uint256",
+        "internalType": "uint256"
       }
     ],
-    outputs: [
+    "outputs": [
       {
-        name: '',
-        type: 'uint256',
-        internalType: 'uint256'
+        "name": "",
+        "type": "uint256",
+        "internalType": "uint256"
       }
     ],
-    stateMutability: 'view'
+    "stateMutability": "view"
   },
   {
-    type: 'function',
-    name: 'buyTicket',
-    inputs: [
+    "type": "function",
+    "name": "buyTicket",
+    "inputs": [
       {
-        name: '_amount',
-        type: 'uint256',
-        internalType: 'uint256'
+        "name": "_amount",
+        "type": "uint256",
+        "internalType": "uint256"
       }
     ],
-    outputs: [],
-    stateMutability: 'nonpayable'
+    "outputs": [],
+    "stateMutability": "nonpayable"
   },
   {
-    type: 'function',
-    name: 'currentBatch',
-    inputs: [],
-    outputs: [
+    "type": "function",
+    "name": "currentBatch",
+    "inputs": [],
+    "outputs": [
       {
-        name: '',
-        type: 'uint256',
-        internalType: 'uint256'
+        "name": "",
+        "type": "uint256",
+        "internalType": "uint256"
       }
     ],
-    stateMutability: 'view'
+    "stateMutability": "view"
   },
   {
-    type: 'function',
-    name: 'distributePrize',
-    inputs: [],
-    outputs: [],
-    stateMutability: 'nonpayable'
+    "type": "function",
+    "name": "distributePrize",
+    "inputs": [],
+    "outputs": [],
+    "stateMutability": "nonpayable"
   },
   {
-    type: 'function',
-    name: 'finalWinners',
-    inputs: [
+    "type": "function",
+    "name": "finalWinners",
+    "inputs": [
       {
-        name: '',
-        type: 'uint256',
-        internalType: 'uint256'
+        "name": "",
+        "type": "uint256",
+        "internalType": "uint256"
       }
     ],
-    outputs: [
+    "outputs": [
       {
-        name: 'batch',
-        type: 'uint256',
-        internalType: 'uint256'
+        "name": "batch",
+        "type": "uint256",
+        "internalType": "uint256"
       },
       {
-        name: 'winner',
-        type: 'address',
-        internalType: 'address'
+        "name": "winner",
+        "type": "address",
+        "internalType": "address"
       },
       {
-        name: 'luckyNumber',
-        type: 'uint256',
-        internalType: 'uint256'
+        "name": "luckyNumber",
+        "type": "uint256",
+        "internalType": "uint256"
       }
     ],
-    stateMutability: 'view'
+    "stateMutability": "view"
   },
   {
-    type: 'function',
-    name: 'generateLuckyNumber',
-    inputs: [],
-    outputs: [],
-    stateMutability: 'nonpayable'
+    "type": "function",
+    "name": "generateLuckyNumber",
+    "inputs": [],
+    "outputs": [],
+    "stateMutability": "nonpayable"
   },
   {
-    type: 'function',
-    name: 'getBalance',
-    inputs: [],
-    outputs: [
+    "type": "function",
+    "name": "getBalance",
+    "inputs": [],
+    "outputs": [
       {
-        name: '',
-        type: 'uint256',
-        internalType: 'uint256'
+        "name": "",
+        "type": "uint256",
+        "internalType": "uint256"
       }
     ],
-    stateMutability: 'view'
+    "stateMutability": "view"
   },
   {
-    type: 'function',
-    name: 'getLinkToken',
-    inputs: [],
-    outputs: [
+    "type": "function",
+    "name": "getLinkToken",
+    "inputs": [],
+    "outputs": [
       {
-        name: '',
-        type: 'address',
-        internalType: 'contract LinkTokenInterface'
+        "name": "",
+        "type": "address",
+        "internalType": "contract LinkTokenInterface"
       }
     ],
-    stateMutability: 'view'
+    "stateMutability": "view"
   },
   {
-    type: 'function',
-    name: 'i_vrfV2PlusWrapper',
-    inputs: [],
-    outputs: [
+    "type": "function",
+    "name": "i_vrfV2PlusWrapper",
+    "inputs": [],
+    "outputs": [
       {
-        name: '',
-        type: 'address',
-        internalType: 'contract IVRFV2PlusWrapper'
+        "name": "",
+        "type": "address",
+        "internalType": "contract IVRFV2PlusWrapper"
       }
     ],
-    stateMutability: 'view'
+    "stateMutability": "view"
   },
   {
-    type: 'function',
-    name: 'isValidOperator',
-    inputs: [
+    "type": "function",
+    "name": "isValidOperator",
+    "inputs": [
       {
-        name: '_operator',
-        type: 'address',
-        internalType: 'address'
+        "name": "_operator",
+        "type": "address",
+        "internalType": "address"
       }
     ],
-    outputs: [
+    "outputs": [
       {
-        name: '',
-        type: 'bool',
-        internalType: 'bool'
+        "name": "",
+        "type": "bool",
+        "internalType": "bool"
       }
     ],
-    stateMutability: 'view'
+    "stateMutability": "view"
   },
   {
-    type: 'function',
-    name: 'linkAddress',
-    inputs: [],
-    outputs: [
+    "type": "function",
+    "name": "linkAddress",
+    "inputs": [],
+    "outputs": [
       {
-        name: '',
-        type: 'address',
-        internalType: 'address'
+        "name": "",
+        "type": "address",
+        "internalType": "address"
       }
     ],
-    stateMutability: 'view'
+    "stateMutability": "view"
   },
   {
-    type: 'function',
-    name: 'operatorAddress',
-    inputs: [
+    "type": "function",
+    "name": "operatorAddress",
+    "inputs": [
       {
-        name: '',
-        type: 'uint256',
-        internalType: 'uint256'
+        "name": "",
+        "type": "uint256",
+        "internalType": "uint256"
       }
     ],
-    outputs: [
+    "outputs": [
       {
-        name: '',
-        type: 'address',
-        internalType: 'address'
+        "name": "",
+        "type": "address",
+        "internalType": "address"
       }
     ],
-    stateMutability: 'view'
+    "stateMutability": "view"
   },
   {
-    type: 'function',
-    name: 'operatorConfirm',
-    inputs: [
+    "type": "function",
+    "name": "operatorConfirm",
+    "inputs": [
       {
-        name: '',
-        type: 'uint256',
-        internalType: 'uint256'
+        "name": "",
+        "type": "uint256",
+        "internalType": "uint256"
       },
       {
-        name: '',
-        type: 'address',
-        internalType: 'address'
+        "name": "",
+        "type": "address",
+        "internalType": "address"
       }
     ],
-    outputs: [
+    "outputs": [
       {
-        name: '',
-        type: 'bool',
-        internalType: 'bool'
+        "name": "",
+        "type": "bool",
+        "internalType": "bool"
       }
     ],
-    stateMutability: 'view'
+    "stateMutability": "view"
   },
   {
-    type: 'function',
-    name: 'operatorSubmit',
-    inputs: [
+    "type": "function",
+    "name": "operatorSubmit",
+    "inputs": [
       {
-        name: '',
-        type: 'uint256',
-        internalType: 'uint256'
+        "name": "",
+        "type": "uint256",
+        "internalType": "uint256"
       },
       {
-        name: '',
-        type: 'uint256',
-        internalType: 'uint256'
+        "name": "",
+        "type": "uint256",
+        "internalType": "uint256"
       }
     ],
-    outputs: [
+    "outputs": [
       {
-        name: 'batch',
-        type: 'uint256',
-        internalType: 'uint256'
+        "name": "batch",
+        "type": "uint256",
+        "internalType": "uint256"
       },
       {
-        name: 'winner',
-        type: 'address',
-        internalType: 'address'
+        "name": "winner",
+        "type": "address",
+        "internalType": "address"
       },
       {
-        name: 'luckyNumber',
-        type: 'uint256',
-        internalType: 'uint256'
+        "name": "luckyNumber",
+        "type": "uint256",
+        "internalType": "uint256"
       }
     ],
-    stateMutability: 'view'
+    "stateMutability": "view"
   },
   {
-    type: 'function',
-    name: 'owner',
-    inputs: [],
-    outputs: [
+    "type": "function",
+    "name": "owner",
+    "inputs": [],
+    "outputs": [
       {
-        name: '',
-        type: 'address',
-        internalType: 'address'
+        "name": "",
+        "type": "address",
+        "internalType": "address"
       }
     ],
-    stateMutability: 'view'
+    "stateMutability": "view"
   },
   {
-    type: 'function',
-    name: 'pickWinner',
-    inputs: [],
-    outputs: [],
-    stateMutability: 'nonpayable'
+    "type": "function",
+    "name": "pickWinner",
+    "inputs": [],
+    "outputs": [],
+    "stateMutability": "nonpayable"
   },
   {
-    type: 'function',
-    name: 'randomNumbers',
-    inputs: [
+    "type": "function",
+    "name": "randomNumbers",
+    "inputs": [
       {
-        name: '',
-        type: 'uint256',
-        internalType: 'uint256'
+        "name": "",
+        "type": "uint256",
+        "internalType": "uint256"
       }
     ],
-    outputs: [
+    "outputs": [
       {
-        name: 'requestId',
-        type: 'uint256',
-        internalType: 'uint256'
+        "name": "requestId",
+        "type": "uint256",
+        "internalType": "uint256"
       },
       {
-        name: 'randomNums',
-        type: 'uint256',
-        internalType: 'uint256'
+        "name": "randomNums",
+        "type": "uint256",
+        "internalType": "uint256"
       }
     ],
-    stateMutability: 'view'
+    "stateMutability": "view"
   },
   {
-    type: 'function',
-    name: 'rawFulfillRandomWords',
-    inputs: [
+    "type": "function",
+    "name": "rawFulfillRandomWords",
+    "inputs": [
       {
-        name: '_requestId',
-        type: 'uint256',
-        internalType: 'uint256'
+        "name": "_requestId",
+        "type": "uint256",
+        "internalType": "uint256"
       },
       {
-        name: '_randomWords',
-        type: 'uint256[]',
-        internalType: 'uint256[]'
+        "name": "_randomWords",
+        "type": "uint256[]",
+        "internalType": "uint256[]"
       }
     ],
-    outputs: [],
-    stateMutability: 'nonpayable'
+    "outputs": [],
+    "stateMutability": "nonpayable"
   },
   {
-    type: 'function',
-    name: 'rejoinBacth',
-    inputs: [],
-    outputs: [],
-    stateMutability: 'nonpayable'
+    "type": "function",
+    "name": "rejoinBacth",
+    "inputs": [],
+    "outputs": [],
+    "stateMutability": "nonpayable"
   },
   {
-    type: 'function',
-    name: 'renounceOwnership',
-    inputs: [],
-    outputs: [],
-    stateMutability: 'nonpayable'
+    "type": "function",
+    "name": "renounceOwnership",
+    "inputs": [],
+    "outputs": [],
+    "stateMutability": "nonpayable"
   },
   {
-    type: 'function',
-    name: 'submitWinner',
-    inputs: [
+    "type": "function",
+    "name": "submitWinner",
+    "inputs": [
       {
-        name: 'luckyNumber',
-        type: 'uint256',
-        internalType: 'uint256'
+        "name": "luckyNumber",
+        "type": "uint256",
+        "internalType": "uint256"
       },
       {
-        name: 'winner',
-        type: 'address',
-        internalType: 'address'
+        "name": "winner",
+        "type": "address",
+        "internalType": "address"
       }
     ],
-    outputs: [],
-    stateMutability: 'nonpayable'
+    "outputs": [],
+    "stateMutability": "nonpayable"
   },
   {
-    type: 'function',
-    name: 'transferOwnership',
-    inputs: [
+    "type": "function",
+    "name": "transferOwnership",
+    "inputs": [
       {
-        name: 'newOwner',
-        type: 'address',
-        internalType: 'address'
+        "name": "newOwner",
+        "type": "address",
+        "internalType": "address"
       }
     ],
-    outputs: [],
-    stateMutability: 'nonpayable'
+    "outputs": [],
+    "stateMutability": "nonpayable"
   },
   {
-    type: 'function',
-    name: 'updateTicketPrice',
-    inputs: [
+    "type": "function",
+    "name": "updateTicketPrice",
+    "inputs": [
       {
-        name: '_price',
-        type: 'uint256',
-        internalType: 'uint256'
+        "name": "_price",
+        "type": "uint256",
+        "internalType": "uint256"
       }
     ],
-    outputs: [],
-    stateMutability: 'nonpayable'
+    "outputs": [],
+    "stateMutability": "nonpayable"
   },
   {
-    type: 'function',
-    name: 'withdraw',
-    inputs: [
+    "type": "function",
+    "name": "withdraw",
+    "inputs": [
       {
-        name: '_amount',
-        type: 'uint256',
-        internalType: 'uint256'
+        "name": "_amount",
+        "type": "uint256",
+        "internalType": "uint256"
       }
     ],
-    outputs: [],
-    stateMutability: 'nonpayable'
+    "outputs": [],
+    "stateMutability": "nonpayable"
   },
   {
-    type: 'function',
-    name: 'withdrawFees',
-    inputs: [],
-    outputs: [],
-    stateMutability: 'nonpayable'
+    "type": "function",
+    "name": "withdrawFees",
+    "inputs": [],
+    "outputs": [],
+    "stateMutability": "nonpayable"
   },
   {
-    type: 'function',
-    name: 'withdrawLink',
-    inputs: [],
-    outputs: [],
-    stateMutability: 'nonpayable'
+    "type": "function",
+    "name": "withdrawLink",
+    "inputs": [],
+    "outputs": [],
+    "stateMutability": "nonpayable"
   },
   {
-    type: 'function',
-    name: 'withdrawNative',
-    inputs: [
+    "type": "function",
+    "name": "withdrawNative",
+    "inputs": [
       {
-        name: 'amount',
-        type: 'uint256',
-        internalType: 'uint256'
+        "name": "amount",
+        "type": "uint256",
+        "internalType": "uint256"
       }
     ],
-    outputs: [],
-    stateMutability: 'nonpayable'
+    "outputs": [],
+    "stateMutability": "nonpayable"
   },
   {
-    type: 'function',
-    name: 'wrapperAddress',
-    inputs: [],
-    outputs: [
+    "type": "function",
+    "name": "wrapperAddress",
+    "inputs": [],
+    "outputs": [
       {
-        name: '',
-        type: 'address',
-        internalType: 'address'
+        "name": "",
+        "type": "address",
+        "internalType": "address"
       }
     ],
-    stateMutability: 'view'
+    "stateMutability": "view"
   },
   {
-    type: 'event',
-    name: 'BatchLuckyNumber',
-    inputs: [
+    "type": "event",
+    "name": "BatchLuckyNumber",
+    "inputs": [
       {
-        name: 'batch',
-        type: 'uint256',
-        indexed: false,
-        internalType: 'uint256'
+        "name": "batch",
+        "type": "uint256",
+        "indexed": false,
+        "internalType": "uint256"
       },
       {
-        name: 'luckyNumber',
-        type: 'uint256',
-        indexed: false,
-        internalType: 'uint256'
+        "name": "luckyNumber",
+        "type": "uint256",
+        "indexed": false,
+        "internalType": "uint256"
       },
       {
-        name: 'block',
-        type: 'uint256',
-        indexed: false,
-        internalType: 'uint256'
+        "name": "block",
+        "type": "uint256",
+        "indexed": false,
+        "internalType": "uint256"
       },
       {
-        name: 'timestamp',
-        type: 'uint256',
-        indexed: false,
-        internalType: 'uint256'
+        "name": "timestamp",
+        "type": "uint256",
+        "indexed": false,
+        "internalType": "uint256"
       }
     ],
-    anonymous: false
+    "anonymous": false
   },
   {
-    type: 'event',
-    name: 'GenerateRandom',
-    inputs: [
+    "type": "event",
+    "name": "GenerateRandom",
+    "inputs": [
       {
-        name: 'requestId',
-        type: 'uint256',
-        indexed: false,
-        internalType: 'uint256'
+        "name": "requestId",
+        "type": "uint256",
+        "indexed": false,
+        "internalType": "uint256"
       },
       {
-        name: 'batch',
-        type: 'uint256',
-        indexed: false,
-        internalType: 'uint256'
+        "name": "batch",
+        "type": "uint256",
+        "indexed": false,
+        "internalType": "uint256"
       },
       {
-        name: 'block',
-        type: 'uint256',
-        indexed: false,
-        internalType: 'uint256'
+        "name": "block",
+        "type": "uint256",
+        "indexed": false,
+        "internalType": "uint256"
       },
       {
-        name: 'timestamp',
-        type: 'uint256',
-        indexed: false,
-        internalType: 'uint256'
+        "name": "timestamp",
+        "type": "uint256",
+        "indexed": false,
+        "internalType": "uint256"
       }
     ],
-    anonymous: false
+    "anonymous": false
   },
   {
-    type: 'event',
-    name: 'JoinRaffle',
-    inputs: [
+    "type": "event",
+    "name": "JoinRaffle",
+    "inputs": [
       {
-        name: 'wallet',
-        type: 'address',
-        indexed: false,
-        internalType: 'address'
+        "name": "wallet",
+        "type": "address",
+        "indexed": false,
+        "internalType": "address"
       },
       {
-        name: 'amount',
-        type: 'uint256',
-        indexed: false,
-        internalType: 'uint256'
+        "name": "amount",
+        "type": "uint256",
+        "indexed": false,
+        "internalType": "uint256"
       },
       {
-        name: 'batch',
-        type: 'uint256',
-        indexed: false,
-        internalType: 'uint256'
+        "name": "batch",
+        "type": "uint256",
+        "indexed": false,
+        "internalType": "uint256"
       },
       {
-        name: 'block',
-        type: 'uint256',
-        indexed: false,
-        internalType: 'uint256'
+        "name": "block",
+        "type": "uint256",
+        "indexed": false,
+        "internalType": "uint256"
       },
       {
-        name: 'timestamp',
-        type: 'uint256',
-        indexed: false,
-        internalType: 'uint256'
+        "name": "timestamp",
+        "type": "uint256",
+        "indexed": false,
+        "internalType": "uint256"
       }
     ],
-    anonymous: false
+    "anonymous": false
   },
   {
-    type: 'event',
-    name: 'OwnershipTransferred',
-    inputs: [
+    "type": "event",
+    "name": "OwnershipTransferred",
+    "inputs": [
       {
-        name: 'previousOwner',
-        type: 'address',
-        indexed: true,
-        internalType: 'address'
+        "name": "previousOwner",
+        "type": "address",
+        "indexed": true,
+        "internalType": "address"
       },
       {
-        name: 'newOwner',
-        type: 'address',
-        indexed: true,
-        internalType: 'address'
+        "name": "newOwner",
+        "type": "address",
+        "indexed": true,
+        "internalType": "address"
       }
     ],
-    anonymous: false
+    "anonymous": false
   },
   {
-    type: 'event',
-    name: 'Withdraw',
-    inputs: [
+    "type": "event",
+    "name": "Withdraw",
+    "inputs": [
       {
-        name: 'wallet',
-        type: 'address',
-        indexed: false,
-        internalType: 'address'
+        "name": "wallet",
+        "type": "address",
+        "indexed": false,
+        "internalType": "address"
       },
       {
-        name: 'amount',
-        type: 'uint256',
-        indexed: false,
-        internalType: 'uint256'
+        "name": "amount",
+        "type": "uint256",
+        "indexed": false,
+        "internalType": "uint256"
       },
       {
-        name: 'batch',
-        type: 'uint256',
-        indexed: false,
-        internalType: 'uint256'
+        "name": "batch",
+        "type": "uint256",
+        "indexed": false,
+        "internalType": "uint256"
       },
       {
-        name: 'block',
-        type: 'uint256',
-        indexed: false,
-        internalType: 'uint256'
+        "name": "block",
+        "type": "uint256",
+        "indexed": false,
+        "internalType": "uint256"
       },
       {
-        name: 'timestamp',
-        type: 'uint256',
-        indexed: false,
-        internalType: 'uint256'
+        "name": "timestamp",
+        "type": "uint256",
+        "indexed": false,
+        "internalType": "uint256"
       }
     ],
-    anonymous: false
+    "anonymous": false
   },
   {
-    type: 'error',
-    name: 'FORTU__ALLOWANCE_NOT_ENOUGH',
-    inputs: []
+    "type": "error",
+    "name": "FORTU__ALLOWANCE_NOT_ENOUGH",
+    "inputs": []
   },
   {
-    type: 'error',
-    name: 'FORTU__BATCH_IS_ONGOING',
-    inputs: []
+    "type": "error",
+    "name": "FORTU__BATCH_IS_ONGOING",
+    "inputs": []
   },
   {
-    type: 'error',
-    name: 'FORTU__INVALID_AMOUNT',
-    inputs: []
+    "type": "error",
+    "name": "FORTU__INVALID_AMOUNT",
+    "inputs": []
   },
   {
-    type: 'error',
-    name: 'FORTU__NOT_ENOUGH_OPERATOR_CONFIRM',
-    inputs: []
+    "type": "error",
+    "name": "FORTU__NOT_ENOUGH_OPERATOR_CONFIRM",
+    "inputs": []
   },
   {
-    type: 'error',
-    name: 'FORTU__ON_PUASE_PERIOD',
-    inputs: []
+    "type": "error",
+    "name": "FORTU__ON_PUASE_PERIOD",
+    "inputs": []
   },
   {
-    type: 'error',
-    name: 'FORTU__OPERATOR_ALREADY_SUBMIT',
-    inputs: [
+    "type": "error",
+    "name": "FORTU__OPERATOR_ALREADY_SUBMIT",
+    "inputs": [
       {
-        name: 'operator',
-        type: 'address',
-        internalType: 'address'
+        "name": "operator",
+        "type": "address",
+        "internalType": "address"
       },
       {
-        name: 'timestamp',
-        type: 'uint256',
-        internalType: 'uint256'
+        "name": "timestamp",
+        "type": "uint256",
+        "internalType": "uint256"
       }
     ]
   },
   {
-    type: 'error',
-    name: 'FORTU__UNIFFICIENT_BALANCE',
-    inputs: []
+    "type": "error",
+    "name": "FORTU__UNIFFICIENT_BALANCE",
+    "inputs": []
   },
   {
-    type: 'error',
-    name: 'FORTU__WALLET_NOT_ALLOWED',
-    inputs: [
+    "type": "error",
+    "name": "FORTU__WALLET_NOT_ALLOWED",
+    "inputs": [
       {
-        name: 'wallet',
-        type: 'address',
-        internalType: 'address'
+        "name": "wallet",
+        "type": "address",
+        "internalType": "address"
       }
     ]
   },
   {
-    type: 'error',
-    name: 'FORTU__WINNER_NOT_PICKED',
-    inputs: []
+    "type": "error",
+    "name": "FORTU__WINNER_NOT_PICKED",
+    "inputs": []
   },
   {
-    type: 'error',
-    name: 'FORTU__ZERO_AMOUNT',
-    inputs: []
+    "type": "error",
+    "name": "FORTU__ZERO_AMOUNT",
+    "inputs": []
   },
   {
-    type: 'error',
-    name: 'OnlyVRFWrapperCanFulfill',
-    inputs: [
+    "type": "error",
+    "name": "OnlyVRFWrapperCanFulfill",
+    "inputs": [
       {
-        name: 'have',
-        type: 'address',
-        internalType: 'address'
+        "name": "have",
+        "type": "address",
+        "internalType": "address"
       },
       {
-        name: 'want',
-        type: 'address',
-        internalType: 'address'
+        "name": "want",
+        "type": "address",
+        "internalType": "address"
       }
     ]
   },
   {
-    type: 'error',
-    name: 'OwnableInvalidOwner',
-    inputs: [
+    "type": "error",
+    "name": "OwnableInvalidOwner",
+    "inputs": [
       {
-        name: 'owner',
-        type: 'address',
-        internalType: 'address'
+        "name": "owner",
+        "type": "address",
+        "internalType": "address"
       }
     ]
   },
   {
-    type: 'error',
-    name: 'OwnableUnauthorizedAccount',
-    inputs: [
+    "type": "error",
+    "name": "OwnableUnauthorizedAccount",
+    "inputs": [
       {
-        name: 'account',
-        type: 'address',
-        internalType: 'address'
+        "name": "account",
+        "type": "address",
+        "internalType": "address"
       }
     ]
   }
 ]
+
 
 export const SUSDE_CONTRACT_ABI = [
   {

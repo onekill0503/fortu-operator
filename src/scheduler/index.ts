@@ -6,9 +6,13 @@ import raffleData from "../services/raffle";
  */
 export default cron({
   name: `Fortu Operator Winner Pick Execution`,
-  pattern: Patterns.everyMinutes(1),
+  pattern: Patterns.everyMinutes(20),
   run: async () => {
-    await raffleData();
+    try {
+      await raffleData();
+    }catch(error: any) {
+      console.error(`Error in Fortu Operator Winner Pick Execution: ${error.message}`);
+    }
   },
 });
 
