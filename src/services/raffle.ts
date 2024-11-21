@@ -9,28 +9,40 @@ const raffleData = async () => {
     const OperatorWallet: Wallet = await getOwnerWallet();
     const activeBatch = (await FortuSmartContract.currentBatch());
 
+    console.log(`[${new Date()}] FORTU : Get Random Number for Batch ${activeBatch} !`)
     const getGeneratedLuckyNumber: string = (await FortuSmartContract.randomNumbers(activeBatch));
-    if(BigInt(getGeneratedLuckyNumber[0]) === BigInt(0)) {
+    if(BigInt(getGeneratedLuckyNumber[0]) !== BigInt(0) && BigInt(getGeneratedLuckyNumber[1]) !== BigInt(0)) {
         console.log(`[${new Date()}] FORTU : Lucky Number Not Generated Yet !`);
+        return;
     }
-
+    console.log(`[${new Date()}] FORTU : Lucky Number Generated : ${BigInt(getGeneratedLuckyNumber[1]).toString()} !`);
     const isOperatorAlreadySubmit: boolean = (await FortuSmartContract.operatorConfirm(activeBatch, OperatorWallet.address))
     if(isOperatorAlreadySubmit){
         console.log(`[${new Date()}] FORTU : Operator already submit winner`);
         return;
     }
-
+    
+    console.log(`[${new Date()}] FORTU : Get Final Raffle Data for Batch ${activeBatch} !`);
     const finalUserRaffleData = await getFinalRaffleData(BigInt(activeBatch));
+    if(finalUserRaffleData.data.length === 0) {
+        console.log(`[${new Date()}] FORTU : No Raffle Data Found !`);
+        return;
+    }
+
+    console.log(`[${new Date()}] FORTU : Get Lucky User for Batch ${activeBatch} !`);
     const luckyNumber: BigInt = (BigInt(getGeneratedLuckyNumber) / finalUserRaffleData.totalTickets) + BigInt(1);
     const luckyUser: UserTicket | undefined = finalUserRaffleData.data.find((ticket) => {
         return luckyNumber >= ticket.startTicketNumber && luckyNumber <= ticket.endTicketNumber;
     });
+
+    console.log(`[${new Date()}] FORTU : Lucky User Found : ${luckyUser?.wallet} !`);
     
     if(!luckyNumber) {
         console.log(`[${new Date()}] FORTU : Lucky User Not Found !`);
         return;
     }
 
+    console.log(`[${new Date()}] FORTU : Submit Winner for Batch ${activeBatch} !`);
     const submitWinnerTx = await FortuSmartContract.submitWinner(luckyNumber , luckyUser?.wallet);
     await submitWinnerTx.wait();
 }
