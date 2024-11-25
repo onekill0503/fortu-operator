@@ -1,12 +1,11 @@
-import { Wallet } from "ethers";
 import { Raffle } from "../schema/types/Raffle";
 import { UserTicket } from "../schema/types/UserTicket";
-import { getFortuSmartContract, getLatestBlock, getOwnerWallet } from "../utils/blockchain";
-import { getRaffleData } from "../utils/subgraph";
+import { Withdraw } from "../schema/types/Withdraw";
+import { getFortuSmartContract, getLatestBlock } from "../utils/blockchain";
+import { getRaffleData, getWithdrawData } from "../utils/subgraph";
 
 const raffleData = async () => {
     const FortuSmartContract = await getFortuSmartContract();
-    const OperatorWallet: Wallet = await getOwnerWallet();
     const activeBatch = (await FortuSmartContract.currentBatch());
 
     console.log(`[${new Date()}] FORTU : Get Random Number for Batch ${activeBatch} !`)
@@ -16,11 +15,6 @@ const raffleData = async () => {
         return;
     }
     console.log(`[${new Date()}] FORTU : Lucky Number Generated : ${BigInt(getGeneratedLuckyNumber[1]).toString()} !`);
-    // const isOperatorAlreadySubmit: boolean = (await FortuSmartContract.operatorConfirm(activeBatch, OperatorWallet.address))
-    // if(isOperatorAlreadySubmit){
-    //     console.log(`[${new Date()}] FORTU : Operator already submit winner`);
-    //     return;
-    // }
     
     console.log(`[${new Date()}] FORTU : Get Final Raffle Data for Batch ${activeBatch} !`);
     const finalUserRaffleData = await getFinalRaffleData(BigInt(activeBatch));
@@ -54,10 +48,21 @@ const getFinalRaffleData = async (batch: BigInt): Promise<{ data: UserTicket[], 
     const rawRaffleData: Raffle[] = await getRaffleData(batch);
     if(rawRaffleData.length === 0) return { data: [], totalTickets: BigInt(0)};
     const cleanRaffleData: Raffle[] = removeDuplicateAddresses(rawRaffleData);
-    return await generateUserTickets(cleanRaffleData);
+    const removeZeroAmount: Raffle[] = await clearZeroAmount(cleanRaffleData, batch);
+    return await generateUserTickets(removeZeroAmount);
 }
 
-const removeDuplicateAddresses = (raffleData: Raffle[]) => {
+const clearZeroAmount = async (raffleData: Raffle[], batch: BigInt): Promise<Raffle[]> => {
+    const rawWithdrawData = await getWithdrawData(batch);
+    const cleanWithdrawData: Withdraw[] = removeDuplicateAddresses(rawWithdrawData);
+    return raffleData.filter((r: Raffle) => {
+        const getWithdrawData = cleanWithdrawData.find((w: Withdraw) => w.wallet === r.wallet);
+        if(!getWithdrawData) return true;
+        return (BigInt(r.amount) - BigInt(getWithdrawData.amount)) > BigInt(0);
+    });
+}
+
+const removeDuplicateAddresses = (raffleData: Raffle[] | Withdraw[]) => {
     const raffleMap = new Map<string, Raffle>();
     raffleData.forEach((r: Raffle) => {
         if (raffleMap.has(r.wallet)) {
